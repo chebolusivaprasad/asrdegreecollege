@@ -2404,6 +2404,248 @@ p:last-child {
 }
 
 /* ==========================================================================
+   LIFE ON CAMPUS SECTION (Vibrant Gradient Theme from Photos & Moments)
+   ========================================================================== */
+.life-campus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .life-campus-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .life-campus-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.life-campus-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 24px 26px 26px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(7, 26, 56, 0.04);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+  min-height: 180px;
+}
+
+/* Gradient Top Bar (from Campus Moments theme) */
+.life-campus-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  opacity: 0.9;
+  transition: height 0.3s var(--ease);
+}
+
+.life-campus-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px -6px rgba(7, 26, 56, 0.12);
+}
+
+.life-campus-card:hover::before {
+  height: 6px;
+}
+
+/* Color variations from photos & moments palette */
+.life-campus-card[data-color="crimson"]::before {
+  background: linear-gradient(90deg, #d92524, #f43f5e);
+}
+.life-campus-card[data-color="crimson"]:hover {
+  border-color: rgba(217, 37, 36, 0.35);
+}
+
+.life-campus-card[data-color="purple"]::before {
+  background: linear-gradient(90deg, #ec4899, #8b5cf6);
+}
+.life-campus-card[data-color="purple"]:hover {
+  border-color: rgba(139, 92, 246, 0.35);
+}
+
+.life-campus-card[data-color="green"]::before {
+  background: linear-gradient(90deg, #10b981, #059669);
+}
+.life-campus-card[data-color="green"]:hover {
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+.life-campus-card[data-color="amber"]::before {
+  background: linear-gradient(90deg, #f59e0b, #d97706);
+}
+.life-campus-card[data-color="amber"]:hover {
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.life-campus-card[data-color="blue"]::before {
+  background: linear-gradient(90deg, #2563eb, #06b6d4);
+}
+.life-campus-card[data-color="blue"]:hover {
+  border-color: rgba(37, 99, 235, 0.35);
+}
+
+.life-campus-card[data-color="ruby"]::before {
+  background: linear-gradient(90deg, #e11d48, #9333ea);
+}
+.life-campus-card[data-color="ruby"]:hover {
+  border-color: rgba(225, 29, 72, 0.35);
+}
+
+.life-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.life-num-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  transition: transform 0.25s var(--ease);
+}
+
+.life-campus-card[data-color="crimson"] .life-num-badge {
+  background: rgba(217, 37, 36, 0.1);
+  color: #d92524;
+  border: 1px solid rgba(217, 37, 36, 0.2);
+}
+
+.life-campus-card[data-color="purple"] .life-num-badge {
+  background: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.life-campus-card[data-color="green"] .life-num-badge {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.life-campus-card[data-color="amber"] .life-num-badge {
+  background: rgba(245, 158, 11, 0.1);
+  color: #d97706;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.life-campus-card[data-color="blue"] .life-num-badge {
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563eb;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+.life-campus-card[data-color="ruby"] .life-num-badge {
+  background: rgba(225, 29, 72, 0.1);
+  color: #e11d48;
+  border: 1px solid rgba(225, 29, 72, 0.2);
+}
+
+.life-campus-card:hover .life-num-badge {
+  transform: scale(1.1);
+}
+
+.life-tag-pill {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--slate);
+  border: 1px solid var(--line);
+}
+
+.life-arrow-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+  transition: transform 0.3s var(--ease), background 0.2s, color 0.2s;
+}
+
+.life-campus-card[data-color="crimson"] .life-arrow-btn {
+  background: rgba(217, 37, 36, 0.08);
+  color: #d92524;
+}
+
+.life-campus-card[data-color="purple"] .life-arrow-btn {
+  background: rgba(139, 92, 246, 0.08);
+  color: #8b5cf6;
+}
+
+.life-campus-card[data-color="green"] .life-arrow-btn {
+  background: rgba(16, 185, 129, 0.08);
+  color: #10b981;
+}
+
+.life-campus-card[data-color="amber"] .life-arrow-btn {
+  background: rgba(245, 158, 11, 0.08);
+  color: #d97706;
+}
+
+.life-campus-card[data-color="blue"] .life-arrow-btn {
+  background: rgba(37, 99, 235, 0.08);
+  color: #2563eb;
+}
+
+.life-campus-card[data-color="ruby"] .life-arrow-btn {
+  background: rgba(225, 29, 72, 0.08);
+  color: #e11d48;
+}
+
+.life-campus-card:hover .life-arrow-btn {
+  transform: translateX(4px);
+}
+
+.life-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 8px;
+  line-height: 1.25;
+  transition: color 0.25s ease;
+}
+
+.life-campus-card:hover .life-card-title {
+  color: var(--crimson);
+}
+
+.life-card-desc {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ==========================================================================
    TITLE-BASED GALLERY ALBUM CARDS (No Stock Photos)
    ========================================================================== */
 .album-cards-grid {
