@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 50" fill="none">
+  <polygon points="12,35 24,11 36,35" fill="#E31837"/>
+  <polygon points="27,35 36,18 45,35" fill="#990018"/>
+  <circle cx="36" cy="13" r="3.5" fill="#E31837"/>
+  <text x="52" y="25" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="16" fill="#1e293b" letter-spacing="-0.2">Tech</text>
+  <text x="52" y="40" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="15" fill="#E31837" letter-spacing="-0.2">Mahindra</text>
+</svg>

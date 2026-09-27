@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 50" fill="none">
+  <g transform="translate(20, 25)">
+    <circle cx="0" cy="0" r="14" fill="#A02021"/>
+    <path d="M-3 -6c2 0 4 2 4 5s-2 5-4 5v-10z" fill="#F37021"/>
+    <circle cx="2" cy="-2" r="2.5" fill="#ffffff"/>
+  </g>
+  <text x="40" y="29" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="16" fill="#A02021" letter-spacing="0.5">ICICI <tspan fill="#F37021">Bank</tspan></text>
+  <text x="41" y="40" font-family="system-ui, sans-serif" font-weight="600" font-size="6.5" fill="#64748b" letter-spacing="1">FINANCIAL SERVICES</text>
+</svg>

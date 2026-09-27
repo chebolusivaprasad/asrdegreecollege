@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 50" fill="none">
+  <g transform="translate(20, 25)">
+    <circle cx="0" cy="0" r="14" fill="#E31E24"/>
+    <circle cx="0" cy="0" r="11" stroke="#FBB03B" stroke-width="1.8" fill="none"/>
+    <path d="M-4 -3c2-2 6-2 8 0M-3 4c1-1 3-1 4 0" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"/>
+  </g>
+  <text x="40" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="15" fill="#E31E24" letter-spacing="-0.2">Muthoot <tspan fill="#1e293b">Finance</tspan></text>
+  <text x="41" y="39" font-family="system-ui, sans-serif" font-weight="600" font-size="6.5" fill="#64748b" letter-spacing="0.8">FINANCIAL CORP</text>
+</svg>

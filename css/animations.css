@@ -1,0 +1,540 @@
+/* ==========================================================================
+   ASR DEGREE COLLEGE — MOTION DESIGN SYSTEM
+   Professional 2026 Higher-Education Animation Engine
+   Vanilla CSS Transitions & Keyframes
+   ========================================================================== */
+
+/* ---- Top Scroll Progress Bar ---- */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--crimson) 0%, var(--gold-accent) 50%, var(--blue-2) 100%);
+  width: 0%;
+  z-index: 10000;
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
+
+/* ---- Welcome Intro Sequence ---- */
+.welcome-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--navy-dark);
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.welcome-overlay.fade-out {
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.already-welcomed #welcomeOverlay,
+.already-welcomed .welcome-overlay {
+  display: none !important;
+}
+
+/* Screen 1: Geometric background lines */
+.welcome-geo-grid {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 50% 50%, rgba(217, 37, 36, 0.12), transparent 60%),
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
+  opacity: 0;
+  animation: welcomeFadeIn 0.5s ease-out forwards;
+}
+
+.welcome-triangle-accent {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border: 1px solid rgba(217, 37, 36, 0.25);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  animation: welcomeTriangleSpin 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Screen 2 & 3: Logo & Title reveal */
+.welcome-stage {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome-logo {
+  height: 84px;
+  width: auto;
+  opacity: 0;
+  transform: scale(0.85);
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.5));
+  animation: welcomeLogoReveal 0.6s 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.welcome-line-draw {
+  width: 0px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--crimson), transparent);
+  margin: 18px auto 14px;
+  animation: welcomeLineWidth 0.6s 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.welcome-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(18px, 3vw, 26px);
+  letter-spacing: 0.18em;
+  color: #ffffff;
+  text-transform: uppercase;
+  opacity: 0;
+  filter: blur(8px);
+  animation: welcomeTextBlur 0.5s 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.welcome-subtitle {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: #fbbf24;
+  text-transform: uppercase;
+  margin-top: 6px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: welcomeSubFade 0.5s 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.welcome-phrase {
+  margin-top: 14px;
+  font-family: var(--font-serif);
+  font-size: 15px;
+  color: #cbd5e1;
+  font-style: italic;
+  opacity: 0;
+  animation: welcomeSubFade 0.5s 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes welcomeFadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes welcomeTriangleSpin {
+  0% { transform: scale(0.4) rotate(-30deg); opacity: 0; }
+  60% { opacity: 0.8; }
+  100% { transform: scale(1) rotate(0deg); opacity: 0.25; }
+}
+
+@keyframes welcomeLogoReveal {
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes welcomeLineWidth {
+  to { width: 180px; }
+}
+
+@keyframes welcomeTextBlur {
+  to { opacity: 1; filter: blur(0px); }
+}
+
+@keyframes welcomeSubFade {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Custom Precision Cursor ---- */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 999999;
+  will-change: transform;
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background: var(--crimson);
+  border-radius: 50%;
+  margin: -3px 0 0 -3px;
+  transition: transform 0.05s ease-out;
+  pointer-events: none;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(217, 37, 36, 0.6);
+  border-radius: 50%;
+  margin: -18px 0 0 -18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.25s var(--ease), height 0.25s var(--ease), margin 0.25s var(--ease), border-color 0.25s, background 0.25s;
+  pointer-events: none;
+}
+
+.cursor-badge {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.2s, transform 0.2s;
+  white-space: nowrap;
+}
+
+/* Cursor State Variations */
+.custom-cursor.state-hover-btn .cursor-ring {
+  width: 50px;
+  height: 50px;
+  margin: -25px 0 0 -25px;
+  border-color: var(--crimson);
+  background: rgba(217, 37, 36, 0.15);
+}
+
+.custom-cursor.state-action .cursor-ring {
+  width: 64px;
+  height: 64px;
+  margin: -32px 0 0 -32px;
+  border-color: #ffffff;
+  background: var(--navy);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.custom-cursor.state-action .cursor-badge {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.custom-cursor.state-link .cursor-ring {
+  width: 24px;
+  height: 24px;
+  margin: -12px 0 0 -12px;
+  border-color: var(--gold-accent);
+}
+
+/* ---- Word Reveal & Hero Typography Animation ---- */
+.word-reveal {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.word-reveal-inner {
+  display: inline-block;
+  transform: translateY(110%);
+  opacity: 0;
+  transition: transform 0.8s var(--ease), opacity 0.8s var(--ease);
+}
+
+.word-reveal-inner.in-view {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Stagger hero word entry */
+.hero-stage-1 { animation: heroRevealWord 0.7s 0.1s var(--ease) forwards; }
+.hero-stage-2 { animation: heroRevealWord 0.7s 0.25s var(--ease) forwards; }
+.hero-stage-3 { animation: heroRevealWord 0.7s 0.4s var(--ease) forwards; }
+
+@keyframes heroRevealWord {
+  from { opacity: 0; transform: translateY(40px) scale(0.96); filter: blur(4px); }
+  to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+/* ---- Continuous Marquee Flow ---- */
+.marquee-strip {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  background: var(--navy-dark);
+  padding: 14px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  user-select: none;
+}
+
+.marquee-content {
+  display: inline-flex;
+  gap: 32px;
+  animation: marqueeRoll 28s linear infinite;
+  align-items: center;
+}
+
+.marquee-strip:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.marquee-item::after {
+  content: '◆';
+  color: var(--crimson);
+  font-size: 8px;
+}
+
+@keyframes marqueeRoll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ---- Clip-Path Geometric Reveal ---- */
+.clip-reveal {
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  transition: clip-path 1s var(--ease);
+}
+
+.clip-reveal.visible {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* ---- Continuous Scroll Indicator Line ---- */
+.scroll-indicator-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.scroll-indicator-line {
+  width: 48px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-indicator-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--crimson);
+  transform: translateX(-100%);
+  animation: scrollLinePass 2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes scrollLinePass {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(0%); }
+  100% { transform: translateX(100%); }
+}
+
+/* ---- Back to Top Smooth Button ---- */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 96px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s, background 0.2s, border-color 0.2s;
+  z-index: 40;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  background: var(--crimson);
+  border-color: var(--crimson);
+  transform: translateY(-3px);
+}
+
+.back-to-top span {
+  display: inline-block;
+  transition: transform 0.25s var(--ease);
+}
+.back-to-top:hover span {
+  transform: translateY(-3px);
+}
+
+/* ---- Brand Logo Micro-Motion & Hover Glow ---- */
+.brand-logo {
+  transition: transform 0.4s var(--ease), filter 0.4s var(--ease);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
+  animation: brandLogoPulse 4.5s ease-in-out infinite;
+}
+
+.brand:hover .brand-logo {
+  transform: scale(1.09) rotate(-2deg);
+  filter: drop-shadow(0 0 14px rgba(217, 37, 36, 0.7)) drop-shadow(0 0 5px rgba(245, 158, 11, 0.5)) !important;
+}
+
+@keyframes brandLogoPulse {
+  0%, 100% {
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(217, 37, 36, 0.5)) drop-shadow(0 0 4px rgba(245, 158, 11, 0.4));
+  }
+}
+
+/* ---- High-End Button Shimmer Light Sweep ---- */
+.btn-crimson, .btn-navy {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-crimson::before, .btn-navy::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.28) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  transition: left 0.75s ease-in-out;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.btn-crimson:hover::before, .btn-navy:hover::before {
+  left: 140%;
+}
+
+.btn .btn-arrow {
+  display: inline-block;
+  transition: transform 0.3s var(--ease);
+}
+
+.btn:hover .btn-arrow {
+  transform: translate(3px, -3px);
+}
+
+/* ---- Stat Item Counter Glow & Micro-Lift ---- */
+.stat-flow-item {
+  transition: transform 0.35s var(--ease), background 0.35s var(--ease);
+  position: relative;
+}
+
+.stat-flow-item:hover {
+  transform: translateY(-4px);
+}
+
+.stat-flow-item strong {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.stat-flow-item:hover strong {
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(217, 37, 36, 0.6);
+}
+
+/* ---- Album Link Cards Micro-Motion ---- */
+.album-link-card {
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease) !important;
+}
+
+.album-link-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 16px 36px -6px rgba(7, 26, 56, 0.18), 0 0 0 1px var(--crimson) !important;
+}
+
+.album-link-card:hover .album-card-action {
+  color: var(--crimson) !important;
+  transform: translateX(4px);
+}
+
+.album-card-action {
+  transition: transform 0.25s var(--ease), color 0.25s ease;
+}
+
+/* ---- Pulse Wave Animation ---- */
+.pulse-dot {
+  position: relative;
+}
+
+.pulse-dot::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: inherit;
+  opacity: 0.6;
+  animation: pulseDotWave 2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@keyframes pulseDotWave {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+/* ---- Reduced Motion Safety ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .welcome-overlay {
+    display: none !important;
+  }
+  .custom-cursor {
+    display: none !important;
+  }
+  .marquee-content {
+    animation: none !important;
+  }
+  .clip-reveal {
+    clip-path: none !important;
+  }
+}

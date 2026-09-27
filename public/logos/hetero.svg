@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 50" fill="none">
+  <g transform="translate(20, 25)">
+    <circle cx="0" cy="0" r="14" fill="#D92524"/>
+    <path d="M-6 -7v14M6 -7v14M-6 0h12" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/>
+  </g>
+  <text x="42" y="32" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="20" fill="#D92524" letter-spacing="1">HETERO</text>
+  <text x="44" y="42" font-family="system-ui, sans-serif" font-weight="600" font-size="6.5" fill="#64748b" letter-spacing="1">RESEARCH &amp; PHARMA</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 50" fill="none">
+  <g transform="translate(20, 25)">
+    <circle cx="0" cy="0" r="14" fill="#00A651"/>
+    <path d="M-3 -8h6v5h5v6h-5v5h-6v-5h-5v-6h5z" fill="#ffffff"/>
+  </g>
+  <text x="40" y="27" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="15" fill="#004D26" letter-spacing="0.5">Apollo</text>
+  <text x="41" y="40" font-family="system-ui, sans-serif" font-weight="800" font-size="9" fill="#F37021" letter-spacing="1">PHARMACY</text>
+</svg>

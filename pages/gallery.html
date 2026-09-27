@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Campus Photo Gallery of ASR Degree College, Atmakur: Computer labs, academic activities, sports tournaments, and student life." />
+  <title>Campus Photo Gallery | ASR Degree College, Atmakur</title>
+  
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+  <style>
+    .gallery-masonry {
+      columns: 3 300px;
+      column-gap: 20px;
+    }
+    .gallery-card {
+      break-inside: avoid;
+      margin-bottom: 20px;
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s var(--ease), box-shadow 0.3s;
+    }
+    .gallery-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .gallery-card img {
+      width: 100%;
+      display: block;
+      transition: transform 0.4s var(--ease);
+    }
+    .gallery-card:hover img {
+      transform: scale(1.03);
+    }
+    .gallery-caption {
+      padding: 14px 16px;
+      font: 700 12px var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--navy);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .gallery-caption span {
+      color: var(--crimson);
+      font-size: 11px;
+    }
+  </style>
+</head>
+<body data-page="gallery">
+  <div class="scroll-progress-bar"></div>
+
+  <!-- Utility Bar -->
+  <div class="utility-bar">
+    <div class="container">
+      <div class="utility-left">
+        <span>📍 Opp. SBI ATM, Priyadarshini Nagar, Atmakur, AP</span>
+        <span class="utility-badge">Affiliated to Vikrama Simhapuri University</span>
+      </div>
+      <div class="utility-right">
+        <a href="tel:+919866196838">📞 Admissions: 98661 96838</a>
+        <a href="mailto:admissions@asrdegreecollege.com">✉ admissions@asrdegreecollege.com</a>
+        <a href="https://wa.me/919866196838" target="_blank" rel="noopener noreferrer" style="color:#22c55e; font-weight:700;">💬 WhatsApp Desk</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="ASR Degree College Home">
+        <img src="../asr-logo.svg" alt="ASR Degree College Logo" class="brand-logo" />
+        <div class="brand-text">
+          <span class="brand-name">ASR Degree College</span>
+          <span class="brand-sub">Atmakur · Affiliated to VSU</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <div class="nav-item"><a href="../index.html" class="nav-link">Home</a></div>
+        <div class="nav-item">
+          <a href="about.html" class="nav-link">About <span class="nav-caret">▼</span></a>
+          <div class="dropdown-menu">
+            <a href="about.html" class="dropdown-link">About ASR College<small>Vision, mission and milestones</small></a>
+            <a href="administration.html" class="dropdown-link">Administration<small>Leadership & Principal's desk</small></a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="courses.html" class="nav-link">Academics <span class="nav-caret">▼</span></a>
+          <div class="dropdown-menu">
+            <a href="courses.html" class="dropdown-link">Programmes & Degrees<small>BCA, BBA, B.Sc & B.Com</small></a>
+            <a href="departments.html" class="dropdown-link">Departments<small>Computer Science, Mgmt, Life Science</small></a>
+            <a href="faculty.html" class="dropdown-link">Faculty Directory<small>Meet our experienced professors</small></a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="admissions.html" class="nav-link">Admissions</a></div>
+        <div class="nav-item">
+          <a href="placements.html" class="nav-link">Placements <span class="nav-caret">▼</span></a>
+          <div class="dropdown-menu">
+            <a href="placements.html" class="dropdown-link">Placement Cell<small>Recruiters, packages & statistics</small></a>
+            <a href="training-internships.html" class="dropdown-link">CRT & Internships<small>Coding bootcamps & soft skills</small></a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="infrastructure.html" class="nav-link active">Campus <span class="nav-caret">▼</span></a>
+          <div class="dropdown-menu">
+            <a href="infrastructure.html" class="dropdown-link">Infrastructure<small>Labs, hostel & bus transport</small></a>
+            <a href="gallery.html" class="dropdown-link">Photo Gallery<small>Campus life in motion</small></a>
+            <a href="events.html" class="dropdown-link">Events & Fests<small>Workshops & cultural life</small></a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="notices.html" class="nav-link">Resources <span class="nav-caret">▼</span></a>
+          <div class="dropdown-menu">
+            <a href="notices.html" class="dropdown-link">Notices & Circulars<small>University & exam updates</small></a>
+            <a href="downloads.html" class="dropdown-link">Downloads<small>Prospectus & application forms</small></a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-trigger" aria-label="Search website"><span>🔍</span> <span>Search</span></button>
+        <a class="btn btn-crimson btn-sm" href="admissions.html">Apply 2026–27 ↗</a>
+        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-head">
+      <div class="brand">
+        <img src="../asr-logo.svg" alt="ASR Logo" style="height:36px;" />
+        <span class="brand-name" style="font-size:14px;">ASR Degree College</span>
+      </div>
+      <button class="mobile-close" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="mobile-nav-group">
+      <div class="mobile-group-title">Navigation</div>
+      <a href="../index.html">01. Home</a>
+      <a href="about.html">02. About ASR</a>
+      <a href="administration.html">03. Administration</a>
+      <a href="courses.html">04. Programmes & Courses</a>
+      <a href="departments.html">05. Departments</a>
+      <a href="faculty.html">06. Faculty Directory</a>
+      <a href="admissions.html">07. Admissions 2026–27</a>
+      <a href="placements.html">08. Placements & Recruiters</a>
+      <a href="training-internships.html">09. CRT & Internships</a>
+      <a href="infrastructure.html">10. Campus & Facilities</a>
+      <a href="gallery.html">11. Campus Gallery</a>
+      <a href="events.html">12. Events & Activities</a>
+      <a href="notices.html">13. Notices & Circulars</a>
+      <a href="downloads.html">14. Downloads & Prospectus</a>
+      <a href="contact.html">15. Contact Us</a>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-panel">
+      <button class="search-close-btn" aria-label="Close search">&times;</button>
+      <div class="eyebrow eyebrow-light">Instant Campus Directory</div>
+      <input type="text" class="search-modal-input" placeholder="Type course, faculty, hostel, placement..." />
+      <div class="search-modal-results"></div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="crumbs">
+          <a href="../index.html">Home</a> <span>/</span> <span>Visual Tour</span>
+        </div>
+        <h1>Campus in Motion: A Visual Record of ASR Life</h1>
+        <p>
+          Explore moments from our modern computer laboratories, student seminars, sports meets, cultural celebrations, and campus life in Atmakur.
+        </p>
+      </div>
+    </section>
+
+    <!-- Gallery & Instagram Section -->
+    <section class="section">
+      <div class="container">
+
+        <!-- Official Instagram Profile Header Banner -->
+        <div class="insta-profile-banner reveal">
+          <div class="insta-profile-left">
+            <div class="insta-avatar-ring">
+              <img src="../asr-logo.svg" alt="ASR Degree College Instagram" />
+            </div>
+            <div class="insta-profile-info">
+              <h3>@asr_degreecollege</h3>
+              <p>Official Instagram Feed · Campus Photos &amp; Video Moments</p>
+            </div>
+          </div>
+          <a href="https://www.instagram.com/asr_degreecollege/" target="_blank" rel="noopener noreferrer" class="insta-follow-btn">
+            <span>📸</span> Follow on Instagram ↗
+          </a>
+        </div>
+
+        <!-- Filter Bar: Album Directory Categories -->
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">All Albums (19)</button>
+          <button class="filter-btn" data-filter="video">▶ Video Reels (7)</button>
+          <button class="filter-btn" data-filter="photo">📸 Photo Posts (8)</button>
+          <button class="filter-btn" data-filter="facility">🏛 Campus Facilities (4)</button>
+          
+          <div class="search-input-box">
+            <input type="text" class="inpage-search" placeholder="Search gallery albums &amp; reels..." />
+          </div>
+        </div>
+
+        <!-- Title-Based Gallery Album Cards (No Stock Photos) -->
+        <div class="album-cards-grid stagger">
+
+          <!-- 01. REEL -->
+          <a href="https://www.instagram.com/reel/DKsDHfxyJGG" target="_blank" rel="noopener noreferrer" class="album-link-card filterable-item" data-category="video">
+            <div class="album-card-top">
+              <span class="album-type-pill reel">▶ Video Reel</span>
+              <span class="album-ext-icon">↗</span>
+            </div>
+            <div class="album-card-center">
+              <div class="album-icon-circle reel">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <h3 class="album-card-title">Campus Video Reel 01</h3>
+              <p class="album-card-desc">Watch student life, cultural festivity &amp; campus activities on Instagram</p>
+            </div>
+            <div class="album-card-foot">
+              <span class="album-handle">@asr_degreecollege</span>
+              <span class="album-action-btn">Watch Reel ↗</span>
+            </div>
+          </a>
+
+          <!-- 02. REEL -->
+          <a href="https://www.instagram.com/reel/DLHsRurxa2C" target="_blank" rel="noopener noreferrer" class="album-link-card filterable-item" data-category="video">
+            <div class="album-card-top">
+              <span class="album-type-pill reel">▶ Video Reel</span>
+              <span class="album-ext-icon">↗</span>
+            </div>
+            <div class="album-card-center">
+              <div class="album-icon-circle reel">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <h3 class="album-card-title">Campus Video Reel 02</h3>
+              <p class="album-card-desc">Student energy, musical performance &amp; stage showcase highlights</p>
+            </div>
+            <div class="album-card-foot">
+              <span class="album-handle">@asr_degreecollege</span>
+              <span class="album-action-btn">Watch Reel ↗</span>
+            </div>
+          </a>
+
+          <!-- 03. REEL -->
+          <a href="https://www.instagram.com/reel/DXeRJ_Wj7ZT" target="_blank" rel="noopener noreferrer" class="album-link-card filterable-item" data-category="video">
+            <div class="album-card-top">
+              <span class="album-type-pill reel">▶ Video Reel</span>
+              <span class="album-ext-icon">↗</span>
+            </div>
+            <div class="album-card-center">
+              <div class="album-icon-circle reel">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <h3 class="album-card-title">Campus Video Reel 03</h3>
+              <p class="album-card-desc">Traditional dance &amp; student celebration moments on campus</p>
+            </div>
+            <div class="album-card-foot">
+              <span class="album-handle">@asr_degreecollege</span>
+              <span class="album-action-btn">Watch Reel ↗</span>
+            </div>
+          </a>
+
+          <!-- 04. REEL -->
+          <a href="https://www.instagram.com/reel/DXpExYYj49u" target="_blank" rel="noopener noreferrer" class="album-link-card filterable-item" data-category="video">
+            <div class="album-card-top">
+              <span class="album-type-pill reel">▶ Video Reel</span>
+              <span class="album-ext-icon">↗</span>
+            </div>
+            <div class="album-card-center">
+              <div class="album-icon-circle reel">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <h3 class="album-card-title">Campus Video Reel 04</h3>
+              <p class="album-card-desc">Freshers welcome, student interactions &amp; collegiate gatherings</p>
+            </div>
+            <div class="album-card-foot">
+              <span class="album-handle">@asr_degreecollege</span>
+              <span class="album-action-btn">Watch Reel ↗</span>
+            </div>
+          </a>
+
+          <!-- 05. REEL -->
+          <a href="https://www.instagram.com/reel/DXrIHndj3TS" target="_blank" rel="noopener noreferrer" class="album-link-card filterable-item" data-category="video">
+            <div class="album-card-top">
+              <span class="album-type-pill reel">▶ Video Reel</span>
+              <span class="album-ext-icon">↗</span>
+            </div>
+            <div class="album-card-center">
+              <div class="album-icon-circle reel">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <h3 class="album-card-title">Campus Video Reel 05</h3>
+              <p class="album-card-desc">Sports competition, athletics meet &amp; outdoor events video</p>
+            </div>
+            <div class="album-card-foot">
+              <span class="album-handle">@asr_degreecollege</span>
+              <span class="album-action-btn">Watch Reel ↗</span>
+            </div>
+          </a>
+
+          <!-- 06. REEL -->
+          <a href="https://www.instagram.com/reel/DXrIYwxD85D" target="_blank" rel="noopener noreferrer" class="album-link-card filterable-item" data-category="video">
+            <div class="album-card-top">
+              <span class="album-type-pill reel">▶ Video Reel</span>
+              <span class="album-ext-icon">↗</span>
+            </div>
+            <div class="album-card-center">
+              <div class="album-icon-circle reel">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <h3 class="album-card-title">Campus Video Reel 06</h3>
+              <p class="album-card-desc">Traditional festival celebrations, cultural colors &amp; student life</p>
+            </div>
+            <div class="album-card-foot">
+              <span class="album-handle">@asr_degreecollege</span>
+              <span class="album-action-btn">Watch Reel ↗</span>
+            </div>
+          </a>
+
+          <!-- 07. REEL -->
+          <a href="https://www.instagram.com/reel/DZktL6MPUoT" target="_blank" rel="noopener noreferrer" class="album-link-card filterable-item" data-category="video">
+            <div class="album-card-top">
+              <span class="album-type-pill reel">▶ Video Reel</span>
+              <span class="album-ext-icon">↗</span>
+            </div>
+            <div class="album-card-center">
+              <div class="album-icon-circle reel">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <h3 class="album-card-title">Campus Video Reel 07</h3>
+              <p class="album-card-desc">Graduation memories, batch celebrations &amp; student farewell reel</p>
+            </div>
+            <div class="album-card-foot">
+              <span class="album-handle">@asr_degreecollege</span>
+              <span class="album-action-btn">Watch Reel ↗</span>
+            </div>
+          </a>
+
+          <!-- 08. POST -->
+          <a href="https://www.instagram.com/p/DKjIZWDxbQq" target="_blank" rel="noopener noreferrer" class="album-link-card filterable-item" data-category="photo">
+            <div class="album-card-top">
+              <span class="album-type-pill post">📸 Photo Post</span>
+              <span class="album-ext-icon">↗</span>
+            </div>
+            <div class="album-card-center">
+              <div class="album-icon-circle post">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 9a3 3 0 100 6 3 3 0 000-6zm-7-3h2.18l1.82-2h6l1.82 2H19a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2zm7 13a5 5 0 100-10 5 5 0 000 10z"/></svg>
+              </div>
+              <h3 class="album-card-title">Campus Photo Post 01</h3>
+              <p class="album-card-desc">Student academic achievements &amp; university examination felicitations</p>
+            </div>
+            <div class="album-card-foot">
+              <span class="album-handle">@asr_degreecollege</span>
+              <span class="album-action-btn">View Post ↗</span>
+            </div>
+          </a>
+
+          <!-- 09. POST -->
+          <a href="https://www.instagram.com/p/DLE9aq0xarp" target="_blank" rel="noopener noreferrer" class="album-link-card filterable-item" data-category="photo">
+            <div class="album-card-top">
+              <span class="album-type-pill post">📸 Photo Post</span>
+              <span class="album-ext-icon">↗</span>
+            </div>
+            <div class="album-card-center">
+              <div class="album-icon-circle post">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 9a3 3 0 100 6 3 3 0 000-6zm-7-3h2.18l1.82-2h6l1.82 2H19a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2zm7 13a5 5 0 100-10 5 5 0 000 10z"/></svg>
+              </div>
+              <h3 class="album-card-title">Campus Photo Post 02</h3>
+              <p class="album-card-desc">Special day celebration, seminar gathering &amp; college community moments</p>
+            </div>
+            <div class="album-card-foot">
+              <span class="album-handle">@asr_degreecollege</span>
+              <span class="album-action-btn">View Post ↗</span>
+            </div>
+          </a>
+
+          <!-- 10. POST -->
+          <a href="https://www.instagram.com/p/DXdddLQj3xG" target="_blank" rel="noopener noreferrer" class="album-link-card filterable-item" data-category="photo">
+            <div class="album-card-top">
+              <span class="album-type-pill post">📸 Photo Post</span>
+              <span class="album-ext-icon">↗</span>
+            </div>
+            <div class="album-card-center">
+              <div class="album-icon-circle post">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 9a3 3 0 100 6 3 3 0 000-6zm-7-3h2.18l1.82-2h6l1.82 2H19a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2zm7 13a5 5 0 100-10 5 5 0 000 10z"/></svg>
+              </div>
+              <h3 class="album-card-title">Campus Photo Post 03</h3>
+              <p class="album-card-desc">Technical expo, computer projects &amp; academic presentations</p>
+            </div>
+            <div class="album-card-foot">
+              <span class="album-handle">@asr_degreecollege</span>
+              <span class="album-action-btn">View Post ↗</span>
+            </div>
+          </a>
+
+          <!-- 11. POST -->
+          <a href="https://www.instagram.com/p/Dafc5T0PRwh/?stkn=MW1mbzd3djZ5N2J4MQ==" target="_blank" rel="noopener noreferrer" class="album-link-card filterable-item" data-category="photo">
+            <div class="album-card-top">
+              <span class="album-type-pill post">📸 Photo Post</span>
+              <span class="album-ext-icon">↗</span>
+            </div>
+            <div class="album-card-center">
+              <div class="album-icon-circle post">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 9a3 3 0 100 6 3 3 0 000-6zm-7-3h2.18l1.82-2h6l1.82 2H19a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2zm7 13a5 5 0 100-10 5 5 0 000 10z"/></svg>
+              </div>
+              <h3 class="album-card-title">Campus Photo Post 04</h3>
+              <p class="album-card-desc">National festival flag ceremony &amp; campus patriotic gathering</p>
+            </div>
+            <div class="album-card-foot">
+              <span class="album-handle">@asr_degreecollege</span>
+              <span class="album-action-btn">View Post ↗</span>
+            </div>
+          </a>
+
+          <!-- 12. POST -->
+          <a href="https://www.instagram.com/p/Dafc9oXv5N_/?stkn=cmEzNzBvNXg2Z2tk" target="_blank" rel="noopener noreferrer" class="album-link-card filterable-item" data-category="photo">
+            <div class="album-card-top">
+              <span class="album-type-pill post">📸 Photo Post</span>
+              <span class="album-ext-icon">↗</span>
+            </div>
+            <div class="album-card-center">
+              <div class="album-icon-circle post">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 9a3 3 0 100 6 3 3 0 000-6zm-7-3h2.18l1.82-2h6l1.82 2H19a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2zm7 13a5 5 0 100-10 5 5 0 000 10z"/></svg>
+              </div>
+              <h3 class="album-card-title">Campus Photo Post 05</h3>
+              <p class="album-card-desc">Merit awards distribution, leadership honors &amp; student praise</p>
+            </div>
+            <div class="album-card-foot">
+              <span class="album-handle">@asr_degreecollege</span>
+              <span class="album-action-btn">View Post ↗</span>
+            </div>
+          </a>
+
+          <!-- 13. POST -->
+          <a href="https://www.instagram.com/p/DXdj9OyD6TX" target="_blank" rel="noopener noreferrer" class="album-link-card filterable-item" data-category="photo">
+            <div class="album-card-top">
+              <span class="album-type-pill post">📸 Photo Post</span>
+              <span class="album-ext-icon">↗</span>
+            </div>
+            <div class="album-card-center">
+              <div class="album-icon-circle post">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 9a3 3 0 100 6 3 3 0 000-6zm-7-3h2.18l1.82-2h6l1.82 2H19a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2zm7 13a5 5 0 100-10 5 5 0 000 10z"/></svg>
+              </div>
+              <h3 class="album-card-title">Campus Photo Post 06</h3>
+              <p class="album-card-desc">Art, photography &amp; creative expression student gallery</p>
+            </div>
+            <div class="album-card-foot">
+              <span class="album-handle">@asr_degreecollege</span>
+              <span class="album-action-btn">View Post ↗</span>
+            </div>
+          </a>
+
+          <!-- 14. POST -->
+          <a href="https://www.instagram.com/p/DXdlHoID52a" target="_blank" rel="noopener noreferrer" class="album-link-card filterable-item" data-category="photo">
+            <div class="album-card-top">
+              <span class="album-type-pill post">📸 Photo Post</span>
+              <span class="album-ext-icon">↗</span>
+            </div>
+            <div class="album-card-center">
+              <div class="album-icon-circle post">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 9a3 3 0 100 6 3 3 0 000-6zm-7-3h2.18l1.82-2h6l1.82 2H19a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2zm7 13a5 5 0 100-10 5 5 0 000 10z"/></svg>
+              </div>
+              <h3 class="album-card-title">Campus Photo Post 07</h3>
+              <p class="album-card-desc">Social responsibility, green campus drive &amp; community service</p>
+            </div>
+            <div class="album-card-foot">
+              <span class="album-handle">@asr_degreecollege</span>
+              <span class="album-action-btn">View Post ↗</span>
+            </div>
+          </a>
+
+          <!-- 15. POST -->
+          <a href="https://www.instagram.com/p/DZZpw3bv4cF" target="_blank" rel="noopener noreferrer" class="album-link-card filterable-item" data-category="photo">
+            <div class="album-card-top">
+              <span class="album-type-pill post">📸 Photo Post</span>
+              <span class="album-ext-icon">↗</span>
+            </div>
+            <div class="album-card-center">
+              <div class="album-icon-circle post">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 9a3 3 0 100 6 3 3 0 000-6zm-7-3h2.18l1.82-2h6l1.82 2H19a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2zm7 13a5 5 0 100-10 5 5 0 000 10z"/></svg>
+              </div>
+              <h3 class="album-card-title">Campus Photo Post 08</h3>
+              <p class="album-card-desc">Inter-collegiate tournament trophy &amp; student sports champions</p>
+            </div>
+            <div class="album-card-foot">
+              <span class="album-handle">@asr_degreecollege</span>
+              <span class="album-action-btn">View Post ↗</span>
+            </div>
+          </a>
+
+          <!-- 16. FACILITY ALBUM -->
+          <a href="infrastructure.html" class="album-link-card filterable-item" data-category="facility">
+            <div class="album-card-top">
+              <span class="album-type-pill facility">🏛 Campus Facility</span>
+              <span class="album-ext-icon">→</span>
+            </div>
+            <div class="album-card-center">
+              <div class="album-icon-circle facility">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+              </div>
+              <h3 class="album-card-title">Main Academic Block</h3>
+              <p class="album-card-desc">Spacious classrooms, lecture halls, counseling chambers &amp; administrative desk</p>
+            </div>
+            <div class="album-card-foot">
+              <span class="album-handle" style="color:var(--navy);">Campus Architecture</span>
+              <span class="album-action-btn">View Infrastructure →</span>
+            </div>
+          </a>
+
+          <!-- 17. FACILITY ALBUM -->
+          <a href="infrastructure.html" class="album-link-card filterable-item" data-category="facility">
+            <div class="album-card-top">
+              <span class="album-type-pill facility">🏛 Campus Facility</span>
+              <span class="album-ext-icon">→</span>
+            </div>
+            <div class="album-card-center">
+              <div class="album-icon-circle facility">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg>
+              </div>
+              <h3 class="album-card-title">Air-Conditioned Computer Labs</h3>
+              <p class="album-card-desc">120+ Intel Core i5/i7 workstations, high-speed fiber internet &amp; software toolchains</p>
+            </div>
+            <div class="album-card-foot">
+              <span class="album-handle" style="color:var(--navy);">Computing Infrastructure</span>
+              <span class="album-action-btn">View Labs →</span>
+            </div>
+          </a>
+
+          <!-- 18. FACILITY ALBUM -->
+          <a href="infrastructure.html" class="album-link-card filterable-item" data-category="facility">
+            <div class="album-card-top">
+              <span class="album-type-pill facility">🏛 Campus Facility</span>
+              <span class="album-ext-icon">→</span>
+            </div>
+            <div class="album-card-center">
+              <div class="album-icon-circle facility">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z"/></svg>
+              </div>
+              <h3 class="album-card-title">Central Digital Library</h3>
+              <p class="album-card-desc">Thousands of textbooks, VSU university syllabi reference books &amp; quiet reading halls</p>
+            </div>
+            <div class="album-card-foot">
+              <span class="album-handle" style="color:var(--navy);">Academic Resources</span>
+              <span class="album-action-btn">View Library →</span>
+            </div>
+          </a>
+
+          <!-- 19. FACILITY ALBUM -->
+          <a href="infrastructure.html" class="album-link-card filterable-item" data-category="facility">
+            <div class="album-card-top">
+              <span class="album-type-pill facility">🏛 Campus Facility</span>
+              <span class="album-ext-icon">→</span>
+            </div>
+            <div class="album-card-center">
+              <div class="album-icon-circle facility">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>
+              </div>
+              <h3 class="album-card-title">Food Science &amp; Technology Lab</h3>
+              <p class="album-card-desc">Specialized testing equipment for microbiology, food processing &amp; nutrient analysis</p>
+            </div>
+            <div class="album-card-foot">
+              <span class="album-handle" style="color:var(--navy);">Science Laboratories</span>
+              <span class="album-action-btn">View Labs →</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Universal Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="../asr-logo.svg" alt="ASR Logo" class="brand-logo" />
+        <p><strong>ASR Degree College, Atmakur</strong><br />Affiliated to Vikrama Simhapuri University. Admissions open 2026–27.</p>
+      </div>
+      <div>
+        <p class="footer-title">Academic Degrees</p>
+        <div class="footer-links">
+          <a href="courses.html">BCA (Computer Applications)</a>
+          <a href="courses.html">BCA (Artificial Intelligence)</a>
+          <a href="courses.html">BBA (Business Analytics)</a>
+          <a href="courses.html">B.Sc (Food Science & Tech)</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-title">Admissions & Aid</p>
+        <div class="footer-links">
+          <a href="admissions.html">Admissions 2026–27</a>
+          <a href="downloads.html">College Prospectus</a>
+          <a href="contact.html">Campus Visit Guide</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-title">Campus & Careers</p>
+        <div class="footer-links">
+          <a href="placements.html">Placement Cell</a>
+          <a href="infrastructure.html">AC Computer Labs</a>
+          <a href="gallery.html">Photo Gallery</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-title">Institutional Desk</p>
+        <div class="footer-links">
+          <a href="about.html">About ASR College</a>
+          <a href="administration.html">Chairman & Principal Desk</a>
+          <a href="faculty.html">Faculty Directory</a>
+          <a href="contact.html">Map & Directions</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div>© 2026 ASR Degree College, Atmakur. All rights reserved. Affiliated to VSU.</div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" aria-label="Back to top"><span>↑</span></button>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>

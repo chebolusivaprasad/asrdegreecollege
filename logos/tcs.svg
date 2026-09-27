@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 50" fill="none">
+  <rect x="4" y="6" width="38" height="38" rx="8" fill="#005691"/>
+  <path d="M14 18h18M23 18v16" stroke="#ffffff" stroke-width="3.8" stroke-linecap="round"/>
+  <text x="50" y="30" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="22" fill="#002d62" letter-spacing="1">TCS</text>
+  <text x="51" y="40" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="7" fill="#556987" letter-spacing="0.6">TATA CONSULTANCY</text>
+</svg>
