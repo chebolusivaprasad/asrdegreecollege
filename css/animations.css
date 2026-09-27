@@ -538,3 +538,9 @@
     clip-path: none !important;
   }
 }
+
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+}

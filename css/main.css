@@ -35,8 +35,9 @@
   --font-mono: 'Space Mono', monospace;
   
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
-  --maxw: 1340px;
-  --pad: clamp(18px, 4vw, 56px);
+  --maxw: min(1440px, 94vw);
+  --pad: clamp(16px, 3.5vw, 56px);
+  --font-base: clamp(15px, 0.4vw + 14px, 16.5px);
   --radius-sm: 6px;
   --radius-md: 12px;
   --radius-lg: 20px;
@@ -56,18 +57,21 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: clip;
+  width: 100%;
 }
 
 body {
   margin: 0;
   min-width: 320px;
+  width: 100%;
   color: var(--ink);
   background: var(--white);
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: var(--font-base, 15.5px);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body.nav-open, body.modal-open {
@@ -91,9 +95,12 @@ button {
   background: transparent;
 }
 
-img {
+img, video, iframe, object, embed {
   display: block;
   max-width: 100%;
+}
+
+img {
   height: auto;
 }
 
@@ -155,14 +162,20 @@ h1, h2, h3, h4, h5 {
   margin: 0;
 }
 
+h1 {
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
 h2 {
-  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
-  line-height: 1.14;
+  font-size: clamp(1.85rem, 3.2vw, 3.1rem);
+  line-height: 1.15;
   letter-spacing: -0.03em;
 }
 
 h3 {
-  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  font-size: clamp(1.2rem, 1.8vw, 1.65rem);
   line-height: 1.25;
   letter-spacing: -0.02em;
 }
@@ -170,6 +183,7 @@ h3 {
 p {
   margin: 0 0 16px;
   color: var(--slate);
+  font-size: inherit;
 }
 p:last-child {
   margin-bottom: 0;
@@ -3473,7 +3487,7 @@ p:last-child {
    SECTIONS & LAYOUT DEFAULTS
    ========================================================================== */
 .section {
-  padding: clamp(56px, 8vw, 96px) 0;
+  padding: clamp(52px, 6.5vw, 100px) 0;
 }
 
 .section-soft {
@@ -3492,24 +3506,25 @@ p:last-child {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  gap: 32px;
-  margin-bottom: 48px;
+  gap: clamp(24px, 3.5vw, 44px);
+  margin-bottom: clamp(36px, 4vw, 56px);
   flex-wrap: wrap;
 }
 
 .section-head-center {
   text-align: center;
-  max-width: 720px;
-  margin: 0 auto 52px;
+  max-width: 780px;
+  margin: 0 auto clamp(36px, 4.5vw, 56px);
 }
 .section-head-center .eyebrow {
   justify-content: center;
 }
 
 .section-intro {
-  max-width: 440px;
+  max-width: 560px;
   color: var(--muted);
-  font-size: 15px;
+  font-size: clamp(14.5px, 0.35vw + 13.5px, 16.5px);
+  line-height: 1.6;
 }
 
 /* ==========================================================================
@@ -3643,137 +3658,728 @@ p:last-child {
 }
 
 /* ==========================================================================
-   RESPONSIVE BREAKPOINTS (320px to 1920px)
+   MULTI-TIER RESPONSIVE & ADAPTIVE SYSTEM
+   Desktop (1400px+) · Laptop (1025-1399px) · Tablet (769-1024px) · Mobile (320-768px)
    ========================================================================== */
-@media (max-width: 1180px) {
-  .nav-link {
-    padding: 10px 8px;
-    font-size: 12px;
+
+/* --------------------------------------------------------------------------
+   1. ULTRA-WIDE & LARGE DESKTOP (1400px and up)
+   Expansive, authoritative presentation utilizing available screen width
+   -------------------------------------------------------------------------- */
+@media (min-width: 1400px) {
+  :root {
+    --maxw: min(1540px, 94vw);
+    --pad: clamp(32px, 3.8vw, 64px);
+  }
+
+  .home-hero-content {
+    max-width: 1040px;
+  }
+
+  .home-hero h1 {
+    font-size: clamp(3.2rem, 5.2vw, 5.6rem);
+  }
+
+  .home-hero p.hero-subtitle {
+    max-width: 800px;
+    font-size: 19px;
+  }
+
+  .brief-card-graphic-img {
+    max-width: 640px;
+  }
+
+  .department-explorer-grid {
+    gap: 44px;
+  }
+
+  .dept-preview-panel {
+    min-height: 480px;
+  }
+
+  .programme-interactive-row {
+    padding: 26px 20px;
+    gap: 32px;
+  }
+
+  .life-campus-grid {
+    gap: 28px;
+  }
+
+  .leadership-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.6fr 1fr 1fr 1fr 1.3fr;
+    gap: 48px;
   }
 }
 
-@media (max-width: 1024px) {
+/* --------------------------------------------------------------------------
+   2. STANDARD DESKTOP (1200px to 1399px)
+   Sleek professional desktop balance with full navigation
+   -------------------------------------------------------------------------- */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  :root {
+    --maxw: min(1340px, 92vw);
+    --pad: clamp(24px, 3vw, 48px);
+  }
+
+  .leadership-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .life-campus-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. LAPTOP & COMPACT DESKTOP (1025px to 1199px)
+   Proportionate desktop experience with zero header cramping
+   -------------------------------------------------------------------------- */
+@media (min-width: 1025px) and (max-width: 1199px) {
+  :root {
+    --maxw: min(1200px, 94vw);
+    --pad: 24px;
+  }
+
   .nav-links {
-    display: none;
+    gap: 1px;
   }
+
+  .nav-link {
+    padding: 8px 8px;
+    font-size: 12px;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .search-trigger {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .header-actions .btn-crimson.btn-sm {
+    padding: 8px 14px;
+    font-size: 11px;
+  }
+
+  .mega-menu {
+    min-width: min(520px, 90vw);
+    left: 0;
+    transform: translateY(10px);
+  }
+
+  .nav-item:hover .mega-menu {
+    transform: translateY(0);
+  }
+
+  .stats-flow-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .admissions-journey-track {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+
+  .leadership-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .life-campus-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr;
+    gap: 24px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. TABLET & IPAD (769px to 1024px)
+   App-like clean header, touch-friendly grids, optimized navigation
+   -------------------------------------------------------------------------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  :root {
+    --maxw: 100%;
+    --pad: 28px;
+  }
+
+  /* Tablet Header: Clean App Navigation */
+  .nav-links {
+    display: none !important;
+  }
+
   .menu-toggle {
-    display: flex;
+    display: flex !important;
+    min-height: 42px;
+    min-width: 42px;
+    align-items: center;
+    justify-content: center;
   }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .search-trigger {
+    padding: 8px 12px;
+  }
+
+  /* Tablet Hero */
+  .home-hero {
+    min-height: auto;
+    padding: clamp(64px, 8.5vw, 96px) 0 48px;
+  }
+
+  .home-hero h1 {
+    font-size: clamp(2.4rem, 5.2vw, 3.6rem);
+  }
+
+  /* Section 01: About */
+  .about-flow-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .brief-card-graphic-wrap {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  /* Section 02: Programmes */
+  .programme-interactive-row {
+    grid-template-columns: 48px 1.2fr 1fr 36px;
+    gap: 18px;
+    padding: 20px 14px;
+  }
+
+  /* Section 03: Departments */
   .department-explorer-grid {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
-  .leadership-grid {
-    grid-template-columns: 1fr;
+
+  .dept-preview-panel {
+    min-height: 360px;
   }
+
+  /* Section 04: Admissions Journey */
   .admissions-layout {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
+
   .admissions-journey-track {
     grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
   }
+
   .admissions-journey-track::before {
     display: none;
   }
+
+  /* Section 05: Placements & Stats */
   .stats-flow-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .placements-hero-stats {
     grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
   }
+
+  .recruiter-logos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+  }
+
+  /* Section 06: Campus Life */
+  .life-campus-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* Section 07: Leadership */
+  .leadership-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* Section 08: Contact & Map */
+  .location-split-grid, .contact-cta-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .map-panel, .map-panel iframe {
+    width: 100%;
+    min-height: 320px;
+  }
+
+  /* Subpage Shared Grids */
+  .course-grid, .faculty-grid, .facility-grid, .events-grid, .downloads-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  /* Footer */
   .footer-grid {
-    grid-template-columns: 1.5fr 1fr 1fr;
-    gap: 32px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
   }
+
   .footer-brand {
     grid-column: 1 / -1;
   }
 }
 
+/* --------------------------------------------------------------------------
+   5. MOBILE-FIRST COMPACT SYSTEM (320px to 768px)
+   Thumb-friendly, single-column stacking, zero horizontal overflow
+   -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
+  :root {
+    --maxw: 100%;
+    --pad: 18px;
+  }
+
+  html, body {
+    max-width: 100vw;
+    overflow-x: clip;
+    width: 100%;
+  }
+
+  body {
+    padding-bottom: 60px; /* Space for bottom mobile action bar */
+  }
+
   .utility-bar {
     display: none;
   }
-  .about-flow-grid {
-    grid-template-columns: 1fr;
+
+  .nav-links {
+    display: none !important;
   }
-  .course-grid, .faculty-grid, .facility-grid {
-    grid-template-columns: 1fr;
+
+  .menu-toggle {
+    display: flex !important;
+    min-height: 42px;
+    min-width: 42px;
+    align-items: center;
+    justify-content: center;
   }
-  .form-grid {
-    grid-template-columns: 1fr;
+
+  .brand-logo {
+    height: 34px;
   }
-  .programme-interactive-row {
-    grid-template-columns: 44px 1fr 36px;
+
+  .brand-name {
+    font-size: 13.5px;
+  }
+
+  .brand-sub {
+    font-size: 8px;
+    letter-spacing: 0.08em;
+  }
+
+  /* Icon-only search trigger for mobile */
+  .header-actions .search-trigger span:last-child {
+    display: none;
+  }
+
+  .header-actions .search-trigger {
+    padding: 7px 10px;
+    font-size: 14px;
+  }
+
+  .header-actions .btn-crimson.btn-sm {
+    padding: 7px 11px;
+    font-size: 10.5px;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  /* Mobile Hero */
+  .home-hero {
+    min-height: auto;
+    padding: 52px 0 36px;
+    text-align: left;
+  }
+
+  .hero-triangle-bg {
+    width: 260px;
+    height: 260px;
+    right: -20px;
+    top: -10px;
+    opacity: 0.35;
+  }
+
+  .home-hero h1 {
+    font-size: clamp(2rem, 7.8vw, 2.75rem);
+    line-height: 1.08;
+    margin-bottom: 16px;
+  }
+
+  .home-hero p.hero-subtitle {
+    font-size: 14.5px;
+    margin-bottom: 24px;
+    line-height: 1.55;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 46px;
+    font-size: 12px;
+  }
+
+  .hero-quick-strip {
+    margin-top: 30px;
+    padding-top: 18px;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 14px;
   }
+
+  .quick-nav-links {
+    gap: 10px 16px;
+    flex-wrap: wrap;
+  }
+
+  /* Section Spacing */
+  .section {
+    padding: 44px 0;
+  }
+
+  .section-head {
+    margin-bottom: 28px;
+    gap: 16px;
+  }
+
+  /* Section 01: About */
+  .about-flow-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .brief-card-graphic-wrap {
+    max-width: 100%;
+  }
+
+  .cgpa-circle-badge {
+    width: 80px;
+    height: 80px;
+    top: -8px;
+    right: 8px;
+  }
+
+  .circle-badge-text {
+    font-size: 7px;
+  }
+
+  /* Section 02: Programmes */
+  .programme-interactive-row {
+    grid-template-columns: 32px 1fr 24px;
+    gap: 12px;
+    padding: 16px 8px;
+  }
+
+  .programme-interactive-row h3 {
+    font-size: 1.05rem;
+  }
+
   .prog-desc {
     display: none;
   }
-  .hotspot-label {
-    display: none;
+
+  .prog-arrow {
+    font-size: 16px;
   }
-  .hotspot-info-panel {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .admissions-journey-track {
+
+  /* Section 03: Departments */
+  .department-explorer-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 18px;
   }
-  .notice-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+
+  .dept-tab-item {
+    padding: 14px 16px;
   }
-  .notice-info {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+
+  .dept-tab-item strong {
+    font-size: 14.5px;
   }
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
+
+  .dept-tab-item span {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .dept-preview-panel {
+    min-height: 250px;
+  }
+
+  .dept-preview-overlay {
+    padding: 18px 14px;
+  }
+
+  .dept-preview-title {
+    font-size: 1.25rem !important;
+  }
+
+  /* Section 04: Admissions Journey */
+  .admissions-layout {
+    grid-template-columns: 1fr;
     gap: 24px;
   }
-  .mobile-action-bar {
-    display: grid;
-  }
-  body {
-    padding-bottom: 54px;
-  }
-  .floating-whatsapp {
-    bottom: 74px;
-    right: 18px;
-    width: 48px;
-    height: 48px;
-    font-size: 24px;
-  }
-  .back-to-top {
-    bottom: 76px;
-    right: 76px;
-  }
-}
 
-@media (max-width: 480px) {
-  :root {
-    --pad: 16px;
-  }
-  .footer-grid {
+  .admissions-journey-track {
     grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 24px;
   }
+
+  .admissions-journey-track::before {
+    display: none;
+  }
+
+  .journey-step-card {
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 16px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+  }
+
+  /* Section 05: Placements & Stats */
   .stats-flow-grid {
     grid-template-columns: 1fr 1fr;
     gap: 16px;
   }
-  .hero-actions {
+
+  .stat-flow-item strong {
+    font-size: clamp(1.4rem, 6vw, 1.8rem);
+  }
+
+  .stat-flow-item span {
+    font-size: 11px;
+  }
+
+  .placements-hero-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .recruiter-logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  /* Section 06: Campus Life */
+  .life-campus-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .life-campus-card {
+    padding: 18px 20px;
+    min-height: auto;
+  }
+
+  .life-card-title {
+    font-size: 1.2rem;
+  }
+
+  /* Section 07: Leadership */
+  .leadership-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  /* Section 08: Contact CTA & Map */
+  .location-split-grid, .contact-cta-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .map-panel, .map-panel iframe {
+    width: 100%;
+    height: 260px;
+  }
+
+  /* All Subpage Grids */
+  .course-grid, .faculty-grid, .facility-grid, .events-grid, .downloads-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  /* Forms & Inputs: 16px font prevents iOS Safari auto-zoom */
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .form-field input, .form-field select, .form-field textarea {
+    font-size: 16px !important;
+    padding: 12px 14px;
+  }
+
+  .lead-form button[type="submit"] {
+    width: 100%;
+  }
+
+  /* Universal Footer */
+  .site-footer {
+    padding: 40px 0 24px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-bottom: 28px;
+  }
+
+  .footer-brand {
+    margin-bottom: 4px;
+  }
+
+  .footer-bottom {
     flex-direction: column;
-    width: 100%;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 11px;
   }
-  .hero-actions .btn {
-    width: 100%;
+
+  /* Mobile Sticky Action Bar */
+  .mobile-action-bar {
+    display: grid !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 850;
+    background: var(--navy-dark);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
   }
+
+  .floating-whatsapp {
+    bottom: 72px;
+    right: 16px;
+    width: 46px;
+    height: 46px;
+    font-size: 22px;
+    z-index: 800;
+  }
+
+  .back-to-top {
+    bottom: 72px;
+    right: 68px;
+    width: 40px;
+    height: 40px;
+    z-index: 800;
+  }
+
+  /* Tables & Responsive Flow */
+  .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. SMALL MOBILE (320px to 480px)
+   Refined density for small smartphones (iPhone SE, Galaxy A series, etc.)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  :root {
+    --pad: 14px;
+  }
+
+  .home-hero h1 {
+    font-size: clamp(1.85rem, 8.5vw, 2.3rem);
+  }
+
+  .home-hero-kicker {
+    font-size: 9.5px;
+    padding: 5px 10px;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .stats-flow-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .stat-flow-item {
+    padding-left: 10px;
+  }
+
+  .stat-flow-item strong {
+    font-size: 1.35rem;
+  }
+
+  .stat-flow-item span {
+    font-size: 10.5px;
+  }
+
   .search-input-box {
     margin-left: 0;
     width: 100%;
   }
+
   .search-input-box input, .inpage-search {
     width: 100%;
     min-width: 0;
+  }
+
+  .mobile-drawer {
+    padding: 20px 14px 36px;
+  }
+
+  .mobile-drawer a {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. TOUCHSCREEN NO-HOVER CURSOR HANDLING
+   Clean native cursor experience on smartphones & touch tablets
+   -------------------------------------------------------------------------- */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+  body, a, button, input, select, textarea {
+    cursor: auto !important;
   }
 }
