@@ -402,23 +402,12 @@
 
 /* ---- Brand Logo Micro-Motion & Hover Glow ---- */
 .brand-logo {
-  transition: transform 0.4s var(--ease), filter 0.4s var(--ease);
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
-  animation: brandLogoPulse 4.5s ease-in-out infinite;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
 
 .brand:hover .brand-logo {
-  transform: scale(1.09) rotate(-2deg);
-  filter: drop-shadow(0 0 14px rgba(217, 37, 36, 0.7)) drop-shadow(0 0 5px rgba(245, 158, 11, 0.5)) !important;
-}
-
-@keyframes brandLogoPulse {
-  0%, 100% {
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
-  }
-  50% {
-    filter: drop-shadow(0 0 12px rgba(217, 37, 36, 0.5)) drop-shadow(0 0 4px rgba(245, 158, 11, 0.4));
-  }
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25), 0 0 0 2px rgba(217, 37, 36, 0.45) !important;
 }
 
 /* ---- High-End Button Shimmer Light Sweep ---- */

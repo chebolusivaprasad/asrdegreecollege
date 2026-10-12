@@ -371,28 +371,36 @@ p:last-child {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
-  padding: 12px 0;
+  gap: 20px;
+  padding: 16px 0;
   transition: padding 0.3s var(--ease);
 }
 .site-header.scrolled .header-inner {
-  padding: 8px 0;
+  padding: 10px 0;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   flex-shrink: 0;
 }
 
 .brand-logo {
-  height: 42px;
+  height: 54px;
   width: auto;
-  transition: height 0.3s var(--ease);
+  aspect-ratio: 440 / 420;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 4px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.25);
+  display: block;
+  object-fit: contain;
+  transition: height 0.3s var(--ease), padding 0.3s var(--ease), transform 0.3s var(--ease);
 }
 .site-header.scrolled .brand-logo {
-  height: 36px;
+  height: 44px;
+  padding: 3px;
 }
 
 .brand-text {
@@ -401,16 +409,16 @@ p:last-child {
 }
 
 .brand-name {
-  font: 800 15px/1.15 var(--font-display);
-  letter-spacing: -0.02em;
+  font: 800 16px/1.2 var(--font-display);
+  letter-spacing: -0.015em;
   color: var(--white);
 }
 
 .brand-sub {
-  font: 600 9px var(--font-mono);
-  letter-spacing: 0.14em;
+  font: 600 9.5px var(--font-mono);
+  letter-spacing: 0.12em;
   color: #94a3b8;
-  margin-top: 2px;
+  margin-top: 3px;
   text-transform: uppercase;
 }
 
@@ -3200,14 +3208,14 @@ p:last-child {
 
 .dept-list-panel {
   display: grid;
-  gap: 12px;
+  gap: 10px;
 }
 
 .dept-tab-item {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  padding: 20px 24px;
+  padding: 13px 18px;
   cursor: pointer;
   transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
 }
@@ -3220,20 +3228,23 @@ p:last-child {
 
 .dept-tab-item strong {
   display: block;
-  font: 800 16px var(--font-display);
+  font: 800 15px var(--font-display);
   color: var(--navy);
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .dept-tab-item span {
-  font-size: 13px;
+  font-size: 12.5px;
   color: var(--muted);
+  line-height: 1.35;
+  display: block;
 }
 
 .dept-preview-panel {
   border-radius: var(--radius-lg);
   overflow: hidden;
-  position: relative;
+  position: sticky;
+  top: 105px;
   background: var(--navy);
   box-shadow: var(--shadow-xl);
   min-height: 380px;
