@@ -9,7 +9,7 @@ export const college = {
   alternatePhoneHref: 'tel:+919441503316',
   directorPhone: '94900 24732',
   directorPhoneHref: 'tel:+919490024732',
-  email: 'admissions@asrdegreecollege.com',
+  email: 'asrdegreecollegeatk@gmail.com',
   mapUrl: 'https://www.google.com/maps/place/ASR+Degree+College/@14.6167975,79.6212516,17z',
 }
 export const officialLinks = { instagram: '', facebook: '', youtube: '', linkedin: '', prospectus: '', googleForm: '' }

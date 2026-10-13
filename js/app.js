@@ -417,7 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { title: 'B.Sc - Computer Science (CS)', cat: 'Course', link: 'courses.html', sub: 'Computer Theory, Algorithms, Science Route' },
     { title: 'B.Sc - Food Science & Technology (FST)', cat: 'Course', link: 'courses.html', sub: 'Food Processing, Microbiology, Quality Control' },
     { title: 'B.Com - Computer Applications (CA)', cat: 'Course', link: 'courses.html', sub: 'Commerce, Tally, GST, Modern Accounting' },
-    { title: 'Admissions 2026–27', cat: 'Admissions', link: 'admissions.html', sub: 'Eligibility, application process, JVD fee reimbursement' },
+    { title: 'Admissions 2026–27', cat: 'Admissions', link: 'admissions.html', sub: 'Eligibility, application process, Fees reimbursement' },
     { title: 'Placements & Career Cell', cat: 'Careers', link: 'placements.html', sub: 'Highest package 6.5 LPA, 40+ recruiters: TCS, Wipro, Infosys' },
     { title: 'Campus Infrastructure & Facilities', cat: 'Campus', link: 'infrastructure.html', sub: 'Computer labs, Girls hostel, College buses, Digital library' },
     { title: 'Faculty & Academic Team', cat: 'Academics', link: 'faculty.html', sub: 'Experienced HODs, Ph.D. scholars, and senior faculty' },
@@ -566,4 +566,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // =========================================================================
+  // 14. Interactive Stream Eligibility Finder
+  // =========================================================================
+  const streamBtns = document.querySelectorAll('.stream-btn');
+  const streamResultBox = document.getElementById('streamResultBox');
+  if (streamBtns.length > 0 && streamResultBox) {
+    streamBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        streamBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const streamText = btn.textContent.trim();
+        streamResultBox.innerHTML = `
+          <h4>${streamText}</h4>
+          <p style="font-size:13px; color:#475569; margin-bottom:14px;">
+            Students with <strong>${streamText}</strong> background are eligible for all 7 undergraduate degree programmes at ASR Degree College with full Fees Reimbursement facility:
+          </p>
+          <div class="eligible-pills">
+            <span class="eligible-pill">✓ BCA (Computer Applications)</span>
+            <span class="eligible-pill">✓ BCA — AI (Artificial Intelligence)</span>
+            <span class="eligible-pill">✓ BCA — DS (Data Science)</span>
+            <span class="eligible-pill">✓ BBA — BA (Business Analytics)</span>
+            <span class="eligible-pill">✓ B.Sc — CS (Computer Science)</span>
+            <span class="eligible-pill">✓ B.Sc — FST (Food Science & Tech)</span>
+            <span class="eligible-pill">✓ B.Com — CA (Computer Apps)</span>
+          </div>
+        `;
+      });
+    });
+  }
+
 });
+
